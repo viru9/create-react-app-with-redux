@@ -5,6 +5,7 @@ import './css/css/main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
+import thunk from 'redux-thunk';
 
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
@@ -21,7 +22,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(
-   applyMiddleware(promise)
+   applyMiddleware(promise,thunk)
 ));
 
 ReactDOM.render(

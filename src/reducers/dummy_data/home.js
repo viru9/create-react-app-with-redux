@@ -1,4 +1,4 @@
-export const USE_DUMMY_DATA = true;
+export const USE_DUMMY_DATA = false;
 
 export const HOME_DATA = {
   "status": 200,

@@ -26,10 +26,6 @@ class MainNav extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchHomeValues();
-  }
-
   renderNavBar() {
     return _.map(this.props.mainNav.home.response, data => {
       return (
