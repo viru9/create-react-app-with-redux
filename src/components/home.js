@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MainNav from './main_nav';
 import {connect} from 'react-redux';
 import AlertModel from './common/alert';
+import { Button } from 'reactstrap';
 
 class Home extends Component {
 
@@ -14,6 +15,9 @@ class Home extends Component {
 
   buttonClicked() {
     this.setState({show_alert: true});
+    setTimeout(() => {
+      this.setState({show_alert: false})
+    }, 1000);
   }
 
 
@@ -22,8 +26,7 @@ class Home extends Component {
       <div>
         <MainNav/>
         <AlertModel show_alert={this.state.show_alert}/>
-         Home Page
-        <button onClick={this.buttonClicked.bind(this)}>Click me to open an alert</button>
+        <Button outline color="primary" onClick={this.buttonClicked.bind(this)}>Open Alert</Button>
       </div>
     );
   }
